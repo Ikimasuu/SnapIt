@@ -1,4 +1,52 @@
-// carouse functionality
+// scroll effects
+document.addEventListener("DOMContentLoaded", () => {
+  const animateElements = document.querySelectorAll(".animate-on-scroll");
+  const timelineItems = document.querySelectorAll(".timeline-item");
+  const staggeredContainers = document.querySelectorAll(".staggered-container");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px 0px -50px 0px",
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animated");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  animateElements.forEach((element) => {
+    observer.observe(element);
+  });
+
+  timelineItems.forEach((item) => {
+    observer.observe(item);
+  });
+
+  staggeredContainers.forEach((container) => {
+    const staggerObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const children = Array.from(entry.target.children);
+          children.forEach((child, index) => {
+            setTimeout(() => {
+              child.classList.add("animated");
+            }, index * 100);
+          });
+          staggerObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    staggerObserver.observe(container);
+  });
+});
+
+// carousel functionality
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".carousel-track");
   const cards = Array.from(track.children);
@@ -275,6 +323,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   preloadImages();
+});
+
+// Immediate animation for story section
+document.addEventListener("DOMContentLoaded", function () {
+  // Force animations for Our Story section to be visible
+  setTimeout(() => {
+    document
+      .querySelectorAll(
+        ".story-section .slide-in-left, .story-section .slide-in-right"
+      )
+      .forEach((element) => {
+        element.classList.add("animated");
+      });
+  }, 300);
 });
 
 // submit button

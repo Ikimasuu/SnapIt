@@ -678,3 +678,127 @@ footer {
   text-align: right;
   font-size: 12px;
 }
+
+/* scroll effects */
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.staggered-container > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.bounce-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out,
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 1.4);
+}
+
+.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.delay-400 {
+  transition-delay: 0.4s;
+}
+
+.carousel-card {
+  transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
+}
+
+.gallery-item {
+  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease,
+    box-shadow 0.4s ease;
+}
+.timeline-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.timeline-item.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item .timeline-image,
+.timeline-item .timeline-content {
+  opacity: 1;
+  transform: none;
+}
+
+.timeline-item:nth-child(odd) .timeline-image {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 0.2s;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 0.4s;
+}
+
+.timeline-item:nth-child(even) .timeline-image {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 0.2s;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 0.4s;
+}
+
+.timeline-item.animated .timeline-image,
+.timeline-item.animated .timeline-content {
+  opacity: 1;
+  transform: translateX(0);
+}
