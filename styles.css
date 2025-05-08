@@ -14,7 +14,7 @@ body {
 .story-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 40px;
+  padding: 30px 40px;
 }
 
 .story-header {
@@ -89,14 +89,14 @@ body {
 
 /* Enhanced Gallery Styles */
 .gallery-section {
-  padding: 60px 0;
+  padding: 80px 0;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .gallery-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .gallery-header h1 {
@@ -288,12 +288,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 10px 40px; /* Adjusted padding to give more vertical space */
   background-color: white;
 }
 
 .logo {
-  height: 40px;
+  height: 80px; /* Increased from 40px */
+  width: auto; /* Maintain aspect ratio */
 }
 
 .nav-links {
@@ -303,6 +304,8 @@ body {
 
 .nav-links li {
   margin-left: 30px;
+  display: flex;
+  align-items: center; /* Align items vertically */
 }
 
 .nav-links a {
@@ -533,7 +536,7 @@ body {
   background-color: #111;
   color: white;
   padding: 60px 0;
-  margin: 60px 0;
+  /* margin: 60px 0; */
 }
 
 .testimonials-header {
@@ -626,18 +629,15 @@ body {
   background-color: #f9f9f9;
   padding: 80px 0;
 }
-
 .packages-header {
   text-align: center;
   margin-bottom: 50px;
 }
-
 .packages-header h2 {
   font-size: 32px;
   font-weight: 500;
   color: #111;
 }
-
 .packages-container {
   display: flex;
   justify-content: center;
@@ -646,7 +646,6 @@ body {
   margin: 0 auto;
   padding: 0 40px;
 }
-
 .package-card {
   background-color: white;
   border-radius: 8px;
@@ -654,28 +653,31 @@ body {
   width: 30%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   text-align: center;
+  /* Add flexbox to control layout */
+  display: flex;
+  flex-direction: column;
+  /* Ensure all cards have the same height */
+  min-height: 400px;
 }
-
 .package-type {
   font-size: 16px;
   text-transform: uppercase;
   color: #777;
   margin-bottom: 5px;
 }
-
 .package-price {
   font-size: 28px;
   font-weight: 700;
   color: #111;
   margin-bottom: 20px;
 }
-
 .package-features {
   list-style-type: none;
   margin-bottom: 25px;
   text-align: left;
+  /* Make this grow to take available space */
+  flex-grow: 1;
 }
-
 .package-features li {
   margin-bottom: 10px;
   font-size: 14px;
@@ -683,14 +685,12 @@ body {
   position: relative;
   padding-left: 20px;
 }
-
 .package-features li::before {
   content: "•";
   position: absolute;
   left: 0;
   color: #111;
 }
-
 .book-now-btn {
   display: inline-block;
   background-color: #111;
@@ -701,12 +701,12 @@ body {
   font-size: 14px;
   font-weight: 500;
   transition: all 0.3s ease;
+  /* This ensures the button stays at the bottom */
+  margin-top: auto;
 }
-
 .book-now-btn:hover {
   background-color: #333;
 }
-
 /* Footer styling */
 footer {
   background-color: #000;

@@ -322,3 +322,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+// submit button
+function showMessage(event) {
+  event.preventDefault();
+  alert(
+    "Form has been submitted! Our Social Interns will get back to you soon!"
+  );
+
+  window.location.href = "index.html";
+}
