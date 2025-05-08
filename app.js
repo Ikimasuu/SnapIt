@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Add navigation buttons
     addNavButtons();
+
+    // Add click event listener to each card
+    addCardClickListeners();
   }
 
   // Position all cards and apply proper spacing
@@ -67,6 +70,33 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         card.classList.remove("focused");
       }
+    });
+  }
+
+  // Add click event listeners to each card for direct navigation
+  function addCardClickListeners() {
+    cards.forEach((card, index) => {
+      card.addEventListener("click", (e) => {
+        // Only respond to actual clicks, not drag end events
+        if (!isDragging) {
+          currentIndex = index;
+          updateActiveCard();
+          updateCarouselPosition();
+        }
+      });
+
+      // Make cards focusable for accessibility
+      card.setAttribute("tabindex", "0");
+
+      // Add keyboard support
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          currentIndex = index;
+          updateActiveCard();
+          updateCarouselPosition();
+          e.preventDefault();
+        }
+      });
     });
   }
 
@@ -134,6 +164,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Calculate how far was dragged
     const x = e.type === "mouseleave" ? e.clientX : e.pageX;
     const walk = x - startX;
+
+    // Use a smaller threshold to detect a click vs. a drag
+    const clickThreshold = 10;
+
+    // If it's a very small movement, treat it as a click - handled by card click handler
+    if (Math.abs(walk) < clickThreshold) {
+      // It's a click, handled by the card click event
+      return;
+    }
 
     // Determine if we should move to next/prev card based on drag distance
     if (walk < -100 && currentIndex < cards.length - 1) {
