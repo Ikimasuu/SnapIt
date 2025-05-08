@@ -44,8 +44,8 @@ body {
 }
 
 .timeline-image {
-  width: 30%; /* Reduced from 40% to make it smaller */
-  max-width: 350px; /* Reduced max-width */
+  width: 30%;
+  max-width: 350px;
   height: auto;
   position: relative;
   border: 1px solid #e0e0e0;
@@ -87,7 +87,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Enhanced Gallery Styles */
+/* Gallery Styles */
 .gallery-section {
   padding: 80px 0;
   max-width: 1200px;
@@ -140,7 +140,6 @@ body {
   filter: grayscale(0%);
 }
 
-/* Create dimming effect for other items when one is hovered */
 .gallery-grid:has(.gallery-item:hover) .gallery-item:not(:hover) {
   opacity: 0.6;
 }
@@ -232,46 +231,6 @@ body {
   font-size: 16px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .lightbox-nav {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-item {
-    aspect-ratio: 3/4;
-  }
-}
-
-/* Safari and older browsers support (for :has() alternative) */
-@supports not (selector(:has(*))) {
-  .gallery-item {
-    opacity: 0.8;
-  }
-
-  .gallery-item:hover {
-    opacity: 1;
-  }
-}
-
 .nav-button {
   width: 24px;
   height: 24px;
@@ -288,13 +247,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px; /* Adjusted padding to give more vertical space */
+  padding: 10px 40px;
   background-color: white;
 }
 
 .logo {
-  height: 80px; /* Increased from 40px */
-  width: auto; /* Maintain aspect ratio */
+  height: 80px;
+  width: auto;
 }
 
 .nav-links {
@@ -305,7 +264,7 @@ body {
 .nav-links li {
   margin-left: 30px;
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center;
 }
 
 .nav-links a {
@@ -359,8 +318,6 @@ body {
   background-color: #eee;
 }
 
-/* carousel styles */
-/* Enhanced carousel styles */
 .carousel-section {
   padding: 60px 0;
   background-color: #f9f9f9;
@@ -446,41 +403,6 @@ body {
   right: 20px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .carousel {
-    height: 350px;
-  }
-
-  .carousel-card {
-    width: 220px;
-    height: 300px;
-  }
-
-  .carousel-nav {
-    width: 36px;
-    height: 36px;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel {
-    height: 300px;
-  }
-
-  .carousel-card {
-    width: 180px;
-    height: 250px;
-  }
-
-  .carousel-nav {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
-  }
-}
-
 /* Features Section Styles */
 .features-section {
   display: flex;
@@ -536,7 +458,6 @@ body {
   background-color: #111;
   color: white;
   padding: 60px 0;
-  /* margin: 60px 0; */
 }
 
 .testimonials-header {
@@ -653,10 +574,8 @@ body {
   width: 30%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   text-align: center;
-  /* Add flexbox to control layout */
   display: flex;
   flex-direction: column;
-  /* Ensure all cards have the same height */
   min-height: 400px;
 }
 .package-type {
@@ -675,7 +594,6 @@ body {
   list-style-type: none;
   margin-bottom: 25px;
   text-align: left;
-  /* Make this grow to take available space */
   flex-grow: 1;
 }
 .package-features li {
@@ -701,12 +619,12 @@ body {
   font-size: 14px;
   font-weight: 500;
   transition: all 0.3s ease;
-  /* This ensures the button stays at the bottom */
   margin-top: auto;
 }
 .book-now-btn:hover {
   background-color: #333;
 }
+
 /* Footer styling */
 footer {
   background-color: #000;
